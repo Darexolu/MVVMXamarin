@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVMXamarin.MVVMOne">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Start">
+            <Entry Text="{Binding Name, Mode=TwoWay}" FontSize="Large" VerticalOptions="Start" Placeholder="Name please"/>
+            <Label Text="{Binding Name}"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" FontSize="Large"/>
+            <Label Text="{Binding FullText}"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" FontSize="Large"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

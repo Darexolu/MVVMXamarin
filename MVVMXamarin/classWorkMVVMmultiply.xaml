@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvmfromXaml="clr-namespace:MVVMXamarin"
+             x:Class="MVVMXamarin.classWorkMVVMmultiply">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <mvvmfromXaml:ClassWorkMultiplyMVVMViewModel x:Key="viewModel"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout BindingContext="{StaticResource viewModel}">
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="CenterAndExpand"/>
+            <Entry VerticalOptions="Start" Keyboard="Numeric" Placeholder="Enter first number" Text="{Binding FirstNumber}"/>
+            <Entry  VerticalOptions="StartAndExpand"  Keyboard="Numeric" Placeholder="Enter second number" Text="{Binding SecondNumber}"/>
+            <Label VerticalOptions="Start" BackgroundColor="Black"  FontSize="30" FontAttributes="Bold" Padding="150,0 " HeightRequest="30" TextColor="White" Text="{Binding  DisplayResult}" />
+           
+            <!--<Label Text="{Binding One}" FontSize="Large"/>
+            <Label Text="{Binding Two}" FontSize="Large"/>-->
+            <StackLayout>
+                <Button Text="Decrease" Command="{Binding ChangeOne}" CommandParameter="-1" />
+                <Button Text="Increase" Command="{Binding ChangeOne}" CommandParameter="1" />
+            </StackLayout>
+            
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

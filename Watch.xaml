@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVMXamarin.Watch">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Entry Text="{Binding EnterMins}"  FontSize="Large" Keyboard="Numeric" Placeholder="M" WidthRequest="50"/>
+                <Entry Text="{Binding EnterSecs}" FontSize="Large" Keyboard="Numeric"  Placeholder="S" WidthRequest="50" MaxLength="2"             TextChanged="Seconds_Enforcer" />
+            </StackLayout>
+            <Label Text="{Binding Timer}" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+            <Button  Text="{Binding Start}" HorizontalOptions="Center" Command="{Binding StartClick}"/>
+
+            <Button Text="{Binding Pause}" HorizontalOptions="Center" Command="{Binding PauseClick}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
